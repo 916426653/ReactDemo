@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+<script type="text/babel">
+    //组件类的第一个字母必须大写
+    //组件类只能包含一个顶层标签
+    var HelloMessage = React.createClass({
+        render:function () {
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+//    添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className
+//    ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。
+    ReactDOM.render(
+            <HelloMessage name="John"></HelloMessage>,
+            document.querySelector('#example')
+    )
+</script>
+</html>
